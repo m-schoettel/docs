@@ -3,118 +3,130 @@ html{
     position:relative;
 }
 body{
+    margin-left: 30px;
     height:100%;
     width: 950px;/* force the BODY element to match the height of the HTML element */
 }
 
-.lem:hover ~ .tooltipApp:nth-of-type(1){ background-color: yellow; }
+@font-face {
+  font-family: 'e-VatteluttuOT', monospace;
+  src: url(https://github.com/erc-dharma/project-documentation/blob/master/guides/fonts/e-VatteluttuOT.ttf) format('truetype');
+}
 
-.lem:hover { background-color: yellow; }
+@font-face {
+  font-family: 'NotoSansTamil-Regular', monospace;
+  src: url(https://github.com/erc-dharma/project-documentation/blob/master/guides/fonts/NotoSansTamil-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NotoSansGrantha-Regular', monospace;
+  src: url(https://github.com/erc-dharma/project-documentation/blob/master/guides/fonts/NotoSansGrantha-Regular.ttf) format('truetype');
+}
 
 .tooltip {
         position: relative;
+        color: #1E90FF;
           }
-
           /* Tooltip text */
 .tooltip .tooltiptext {
         visibility: hidden;
-        width: 300px;
+        width: 200px;
         background-color: black;
         color: #fff;
         text-align: center;
         padding: 5px 0;
         border-radius: 6px;
-
             /* Position the tooltip text*/
         position: absolute;
         z-index: 1;
           }
-
           /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
         visibility: visible;
           }
 
-          .tooltipApp {
+.tooltip-bibl {
                   position: relative;
                     }
                     /* Tooltip text */
-          .tooltipApp .tooltiptext {
+.tooltip-bibl .tooltiptext-bibl {
                   visibility: hidden;
-                  width: 300px;
+                  width: 200px;
                   background-color: black;
                   color: #fff;
                   text-align: center;
                   padding: 5px 0;
                   border-radius: 6px;
-
                       /* Position the tooltip text*/
                   position: absolute;
+                  display: block;
                   z-index: 1;
                     }
-
                     /* Show the tooltip text when you mouse over the tooltip container */
-          .tooltipApp:hover .tooltiptext {
+.tooltip-bibl:hover .tooltiptext-bibl {
                   visibility: visible;
                     }
 
-                    .tooltipPB {
-                            position: relative;
-                              }
+.tooltip-notes {
+                  position: relative;
+                    }
 
-                              /* Tooltip text */
-                    .tooltipPB .tooltiptextPB {
+.tooltip-notes .tooltiptext-notes {
                             visibility: hidden;
-                            width: 300px;
+                            width: 200px;
                             background-color: black;
                             color: #fff;
                             text-align: center;
                             padding: 5px 0;
                             border-radius: 6px;
-
                                 /* Position the tooltip text*/
                             position: absolute;
                             z-index: 1;
                               }
-
-                              /* Show the tooltip text when you mouse over the tooltip container */
-                    .tooltipPB:hover .tooltiptextPB {
+.tooltip-notes:hover .tooltiptext-notes{
                             visibility: visible;
                               }
-
 div {
         left: 30px;
         padding-right: 0.2em;
         position:relative;
         text-align: justify;
     }
-
 h2 {
         left: -18px;
         padding-right: 0.2em;
         position: relative;
         }
-
 P {
       position: relative;
       }
-
 .latinnum {
     border-top: thin black solid;
      }
-
 .supraline {
     border-top: thin black solid;
      }
+.csl-entry{
+  left: -30px;
+  display: inline;
+}
 
+.csl-bib-body{
+  display: inline;
+  text-indent: -10px;
+}
+
+.refBibl{
+  display: inline;
+  position: relative;
+  left: -1px;
+}
 .previouslyread {
     text-decoration: underline;
      }
-
 *[lang="la"] {
     font-family: "GentiumAlt", "Gentium","Palatino Linotype", "Palatino", "Times New Roman", "Times", "Arial Unicode MS", serif;
 }
-
 *[lang="grc"] {
     font-family: "Lucida Grande", "Arial Unicode MS","Galilee Unicode Gk", "New Athena Unicode", "Athena Unicode",
     "Palatino Linotype", "Titus Cyberbit Basic", "Cardo", "Vusillus Old Face", "Alphabetum", "Galatia SIL",
@@ -123,10 +135,17 @@ P {
     "Verdana", "Tahoma";
    }
 
-.siglum {
+*[lang="tam-vat"]{
+  font-family: "e-VatteluttuOT";
+}
+
+*[lang="tam-tam"]{
+  font-family: "NotoSansTamil-Regular", "NotoSansGrantha-Regular";
+}
+
+   .siglum {
            color: #1E90FF;
              }
-
 .textpart {
     left: 6em;
     line-height: 1.4;
@@ -134,15 +153,11 @@ P {
     margin-bottom: 8px;
     position: relative;
     padding-right: 2em;
-    width: 845px;
-
 }
-
 .textpartnumber {
     padding-right: 0.2em;
     position: relative;
     }
-
 .linenumber {
     color: black;
     position: relative;
@@ -157,9 +172,7 @@ P {
     padding-left: 2px;
     }
 /*border: 1px solid black;
-
 text-align:center;*/
-
 .linenumberapp {
         color: black;
         position: relative;
@@ -172,7 +185,6 @@ text-align:center;*/
         padding-right: 2px;
         padding-left: 2px;
         }
-
 .linenumberbroken {
     left: -4em;
     padding-right: 0.2em;
@@ -180,7 +192,6 @@ text-align:center;*/
     color: red ;
     text-decoration: blink ;
     }
-
 .versenumber {
   color: black;
   position: relative;
@@ -194,104 +205,114 @@ text-align:center;*/
   padding-right: 2px;
   padding-left: 2px;
 }
-
 .cpnumber {
     font-weight: bold;
 }
-
 .verse-meter {
     font-style: italic;
 }
-
 .label-meter{
     font-weight: bold;
     font-style: italic;
 }
-
 .verse-part{
   left: 2px;
-
 }
-
 .first-line{
       margin-top: 10px;
-
 }
-
 .translated-stanzanumber{
   font-weight: bold;
 }
-
 .petraeligature {
     text-decoration: underline;
     }
-
 .underline {
     text-decoration: underline;
     }
-
 .italic {
     font-style: italic;
     }
-
 .symbol {
         border: 2px solid black;
         border-radius: 8px;
         padding: 0.03em;
         }
-
 .grantha {
         font-weight: bold;
         }
-
-.readings {
+.reading {
         font-style: italic;
         color: #228B22;
           }
-
 .orig {
         color: #C71585;
           }
-
 .reg {
         color: #4169E1;
           }
-
 .sic {
         color: #FF6347;
       }
-
 .corr {
         color: #32CD32;
             }
-
 .notBold{
-  font-weight:normal;
-  color: black;
+  font-weight: normal;
 }
+
+/*.notChoice{
+  color:black;
+}*/
 
 .certlow{
-  color:red;
+  color: red;
 }
-
 .resp{
         font-variant: small-caps;
 }
-
 .abbreviation {
   color: #a57659;
 }
 
 .block{
-  text-align:center;
-}
-/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
-@media screen and (min-width: 601px) {
-  div.example {
-    font-size: 80px;
-  }
+  left: 35px;
+  max-width: 96%;
 }
 
+.notBulleted{
+  list-style-type: none;
+}
+
+dl{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+dl:after {content:"";display:table;clear:both;}
+
+dt {
+    float: left;
+    width: 10%;
+    text-align: left;
+    padding: .25em;
+    clear: left;
+    font-weight:bold;
+}
+dd {
+    float: left;
+    width: 60%;
+    padding: .25em 0;
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+
+}
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
   div.example {
